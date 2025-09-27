@@ -8,7 +8,14 @@ const Input = (props) => {
   
   const handleChange = (e) => {
     weather.setSearchedCity(e.target.value);
-    
+ 
+  }
+ 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      weather.fetchWeatherData(weather.searchedCity);
+      weather.setShowWarning(true);
+    }
   }
 
   return (
@@ -16,7 +23,10 @@ const Input = (props) => {
       <input className="input-field" 
       type="text" placeholder="Enter city name"
        value={weather.searchedCity} 
-       onChange={handleChange}/>
+       onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        />
+       
     
   )
 }
