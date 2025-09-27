@@ -9,13 +9,17 @@ import { useWeather } from './context/Weather'
 
 function App() {
   const weather = useWeather();
-  console.log(weather);
+  const handleClick = () => {
+    weather.fetchWeatherData(weather.searchedCity);
+    weather.setShowWarning(true);
+  }
+  
   return (
     <>
     <div className="app">
        <h1>Weather App</h1>
        <Input placeholder="Enter city name" />
-      <Button  onClick={() => weather.fetchWeatherData(weather.searchedCity)} value="Search"/>
+      <Button  onClick={() => handleClick()} value="Search"/>
       <Card />
       <Button onClick={() => window.location.reload()}value="Refresh" />
 
