@@ -17,6 +17,7 @@ const fetchWeatherData = async (city) => {
   try {
     const data = await getWeatherDataForCity(city);
     setWeatherdata(data);
+    console.log(data);
   } catch (err) {
     setError(err.message);
     console.error('Error fetching weather data:', err);
