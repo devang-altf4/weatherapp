@@ -12,7 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  background: url('/weather-background.jpg') center center / cover no-repeat;
   min-height: 100vh;
 }
 
